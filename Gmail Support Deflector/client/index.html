@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic page setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gmail Support Deflector</title>
+
+  <!-- External CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ===============================
+       LOGIN PAGE SECTION
+       This appears first before dashboard
+  =============================== -->
+  <section id="loginPage" class="login-page premium-login">
+    <div class="login-left">
+      <div class="login-brand">
+        <div class="brand-icon">✉️</div>
+        <div>
+          <h2>SupportDeflector</h2>
+          <p>AI-Powered Support Assistant</p>
+        </div>
+      </div>
+  
+      <div class="hero-badge">AI-POWERED SUPPORT</div>
+  
+      <h1>
+        Deflect More.<br />
+        Resolve Faster.<br />
+        <span>Delight Customers.</span>
+      </h1>
+  
+      <p class="hero-text">
+        AI that understands customer intent, detects sentiment, generates smart replies,
+        and helps your team do more in less time.
+      </p>
+  
+      <div class="feature-row">
+        <div>
+          <span>🤖</span>
+          <p>AI Drafts</p>
+        </div>
+        <div>
+          <span>😊</span>
+          <p>Sentiment</p>
+        </div>
+        <div>
+          <span>🔀</span>
+          <p>Smart Routing</p>
+        </div>
+        <div>
+          <span>📊</span>
+          <p>Analytics</p>
+        </div>
+      </div>
+  
+      <div class="trust-card">
+        <p>Trusted by support teams worldwide</p>
+  
+        <div class="trust-stats">
+          <div>
+            <h3>70%</h3>
+            <span>Ticket Deflection</span>
+          </div>
+          <div>
+            <h3>80%</h3>
+            <span>Time Saved</span>
+          </div>
+          <div>
+            <h3>95%</h3>
+            <span>Customer Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="login-right">
+      <div class="login-card glass-card">
+        <h1>Welcome Back</h1>
+        <p>Sign in to continue</p>
+  
+        <form id="loginForm" class="login-form">
+          <label for="loginEmail">Email Address</label>
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="you@example.com"
+            required
+          />
+  
+          <label for="loginPassword">Password</label>
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="••••••••"
+            required
+          />
+  
+          <div class="login-options">
+            <label class="remember-me">
+              <input type="checkbox" />
+              Remember me
+            </label>
+  
+            <a href="#">Forgot password?</a>
+          </div>
+  
+          <button type="submit" class="primary-btn">
+            Sign In
+          </button>
+  
+          <div class="divider">
+            <span></span>
+            <p>or</p>
+            <span></span>
+          </div>
+  
+          <button type="button" id="demoLoginBtn" class="secondary-btn">
+            🌟 Try Demo Account
+          </button>
+        </form>
+  
+        <p class="login-note">
+          Don’t have access? <a href="#">Contact your admin</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===============================
+       MAIN DASHBOARD SECTION
+       Hidden until user logs in
+  =============================== -->
+  <main id="dashboard" class="dashboard hidden">
+    <!-- Sidebar navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="brand-icon">G</div>
+        <h2>Deflector</h2>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">Inbox</a>
+        <a href="#">History</a>
+        <a href="#">Analytics</a>
+        <a href="#">Knowledge Base</a>
+      </nav>
+
+      <button id="logoutBtn" class="logout-btn">
+        Logout
+      </button>
+    </aside>
+
+    <!-- Main content area -->
+    <section class="main-content">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div>
+          <h1>Email Support Dashboard</h1>
+          <p>Generate smart replies, classify emails, and track support activity.</p>
+        </div>
+      </header>
+
+      <!-- Analytics cards -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <p>Total Emails</p>
+          <h2 id="totalEmails">0</h2>
+        </div>
+
+        <div class="stat-card">
+          <p>Drafts Generated</p>
+          <h2 id="draftsGenerated">0</h2>
+        </div>
+
+        <div class="stat-card">
+          <p>Positive Emails</p>
+          <h2 id="positiveEmails">0</h2>
+        </div>
+
+        <div class="stat-card">
+          <p>Urgent Issues</p>
+          <h2 id="urgentEmails">0</h2>
+        </div>
+      </section>
+
+      <!-- Main email working area -->
+      <section class="workspace">
+        <!-- Input panel -->
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Incoming Customer Email</h2>
+            <span>Step 1</span>
+          </div>
+
+          <label for="customerEmail">Customer Email</label>
+          <textarea
+            id="customerEmail"
+            placeholder="Paste customer email here..."
+          ></textarea>
+
+          <label for="previousReplies">Previous Replies / Brand Tone</label>
+          <textarea
+            id="previousReplies"
+            placeholder="Paste previous replies or support tone examples..."
+          ></textarea>
+
+          <label for="toneSelector">Select Reply Tone</label>
+          <select id="toneSelector">
+            <option value="professional">Professional</option>
+            <option value="friendly">Friendly</option>
+            <option value="empathetic">Empathetic</option>
+            <option value="apologetic">Apologetic</option>
+            <option value="short">Short and Direct</option>
+          </select>
+
+          <button id="generateBtn" class="primary-btn">
+            Generate AI Draft
+          </button>
+        </div>
+
+        <!-- Output panel -->
+        <div class="panel">
+          <div class="panel-header">
+            <h2>AI Generated Output</h2>
+            <span>Step 2</span>
+          </div>
+
+          <div class="analysis-grid">
+            <div class="analysis-box">
+              <p>Sentiment</p>
+              <h3 id="sentimentResult">-</h3>
+            </div>
+
+            <div class="analysis-box">
+              <p>Category</p>
+              <h3 id="categoryResult">-</h3>
+            </div>
+          </div>
+
+          <label for="output">Generated Reply</label>
+          <textarea
+            id="output"
+            placeholder="Generated reply will appear here..."
+            readonly
+          ></textarea>
+
+          <div class="action-row">
+            <button id="copyBtn" class="secondary-btn">
+              Copy Reply
+            </button>
+
+            <button id="saveHistoryBtn" class="secondary-btn">
+              Save to History
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Email history section -->
+      <section class="history-section">
+        <div class="panel-header">
+          <h2>Email History</h2>
+          <span>Recent activity</span>
+        </div>
+
+        <div id="historyList" class="history-list">
+          <p class="empty-history">No email history yet.</p>
+        </div>
+      </section>
+
+      <!-- RAG knowledge base placeholder -->
+      <section class="knowledge-section">
+        <div class="panel-header">
+          <h2>RAG Knowledge Base</h2>
+          <span>Coming next</span>
+        </div>
+
+        <p>
+          Add company FAQs, refund policies, product information, and support rules here.
+          In the advanced version, the AI will use this knowledge base before generating replies.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <!-- External JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
